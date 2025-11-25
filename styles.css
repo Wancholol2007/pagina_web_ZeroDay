@@ -1,0 +1,246 @@
+/* ------------------------------------------------------------
+   PALETA DE COLORES (MODIFICA ESTO PARA CAMBIAR EL TEMA)
+   ------------------------------------------------------------ */
+
+/* Color de fondo general de la página */
+:root {
+    --color-fondo-principal: #0e0e12;      /* Fondo global oscuro */
+    --color-texto: #ffffff;                /* Texto principal */
+    --color-texto-suave: #c7c7c7;          /* Texto gris suave */
+
+    /* Acentos principales (violeta / ciberseguridad) */
+    --color-acento: #7c3aed;               /* Color violeta principal */
+    --color-acento-hover: #9d5bff;         /* Violeta más claro para hover */
+
+    /* Colores de tarjetas y secciones */
+    --color-seccion: #16161d;              /* Fondo de secciones */
+    --color-tarjeta: #1d1d26;              /* Fondo de tarjetas */
+    --color-borde: #2c2c3a;                /* Bordes de tarjetas */
+
+    /* Botones */
+    --boton-fondo: #7c3aed;                /* Botón principal */
+    --boton-hover: #9d5bff;                /* Hover del botón principal */
+    --boton-secundario: transparent;       /* Botón secundario (borde) */
+    --boton-secundario-borde: #7c3aed;
+}
+
+/* ------------------------------------------------------------
+   ESTILOS GENERALES
+   ------------------------------------------------------------ */
+
+body {
+    background: var(--color-fondo-principal);
+    color: var(--color-texto);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* ------------------------------------------------------------
+   HEADER Y NAVEGACIÓN
+   ------------------------------------------------------------ */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-seccion); /* Fondo del header */
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--color-borde); /* Línea inferior */
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--color-acento); /* Color del logo (violeta) */
+}
+
+.nav a {
+    margin-left: 20px;
+    color: var(--color-texto-suave);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.nav a:hover {
+    color: var(--color-acento); /* Hover de enlaces */
+}
+
+.btn-contacto {
+    padding: 8px 14px;
+    border: 1px solid var(--color-acento);
+    border-radius: 6px;
+    color: var(--color-acento);
+}
+
+.btn-contacto:hover {
+    background: var(--color-acento);
+    color: white;
+}
+
+/* ------------------------------------------------------------
+   SECCIÓN HERO (PANTALLA PRINCIPAL)
+   ------------------------------------------------------------ */
+
+.hero {
+    text-align: center;
+    padding: 100px 60px;
+    background: url("assests/background.jpeg") no-repeat center center;
+    background-size: cover;
+}
+
+.hero h1 {
+    font-size: 2.6rem;
+    color: var(--color-texto);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--color-texto-suave);
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.btn-primary {
+    padding: 12px 20px;
+    background: var(--boton-fondo); /* Botón principal violeta */
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-right: 10px;
+    transition: 0.2s;
+}
+
+.btn-primary:hover {
+    background: var(--boton-hover); /* Hover del botón */
+}
+
+.btn-secondary {
+    padding: 12px 20px;
+    border: 1px solid var(--color-acento);
+    color: var(--color-acento);
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.btn-secondary:hover {
+    background: var(--color-acento);
+    color: white;
+}
+
+/* ------------------------------------------------------------
+   SECCIONES GENERALES
+   ------------------------------------------------------------ */
+
+.section {
+    padding: 70px 40px;
+    background: var(--color-seccion); /* Fondo de cada sección */
+    margin: 30px 0;
+    border-top: 1px solid var(--color-borde);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-acento); /* Títulos en violeta */
+}
+
+.section p {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 30px;
+    color: var(--color-texto-suave);
+}
+
+/* ------------------------------------------------------------
+   TARJETAS DE CARACTERÍSTICAS
+   ------------------------------------------------------------ */
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 280px;
+    background: var(--color-tarjeta); /* Fondo de las tarjetas */
+    border: 1px solid var(--color-borde);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card h3 {
+    color: var(--color-acento); /* Título de tarjeta */
+}
+
+.card p {
+    color: var(--color-texto-suave);
+}
+
+/* ------------------------------------------------------------
+   GALERÍA DE AVANCES
+   ------------------------------------------------------------ */
+
+.galeria {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.galeria img {
+    width: 600px;
+    border-radius: 8px;
+    border: 2px solid var(--color-borde); /* Bordes de imágenes */
+}
+
+.galeria video {
+    width: 400px;
+    border-radius: 8px;
+    border: 2px solid var(--color-borde); /* Bordes de videos */
+}
+
+/* ------------------------------------------------------------
+   EQUIPO DE DESARROLLO
+   ------------------------------------------------------------ */
+
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.miembro {
+    background: var(--color-tarjeta);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--color-borde);
+    text-align: center;
+}
+
+.miembro h3 {
+    color: var(--color-acento);
+}
+
+/* ------------------------------------------------------------
+   FOOTER
+   ------------------------------------------------------------ */
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--color-texto-suave);
+    background: var(--color-seccion);
+    border-top: 1px solid var(--color-borde);
+}
